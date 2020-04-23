@@ -1,9 +1,9 @@
-from .main_page import MainPage
+п»їfrom .main_page import MainPage
 from .locators import ProductPageLocators
 
 
 class ProductPage(MainPage):
-# добавление в корзину
+# РґРѕР±Р°РІР»РµРЅРёРµ РІ РєРѕСЂР·РёРЅСѓ
     def add_to_basket(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Button 'add to basket' is not presented"
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
@@ -17,3 +17,9 @@ class ProductPage(MainPage):
 
     def check_basket_price(self, price):
         assert self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text == price, "Price in basket is wrong"		
+		
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE),"Success message is presented"
+		
+    def should_disappear_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE),"Success message is presented"
