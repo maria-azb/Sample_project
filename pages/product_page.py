@@ -1,8 +1,8 @@
-﻿from .main_page import MainPage
+﻿from .base_page import BasePage
 from .locators import ProductPageLocators
 import time 
 
-class ProductPage(MainPage):
+class ProductPage(BasePage):
 # добавление в корзину
 
 
