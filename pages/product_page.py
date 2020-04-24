@@ -3,8 +3,6 @@ from .locators import ProductPageLocators
 import time 
 
 class ProductPage(BasePage):
-# добавление в корзину
-
 
     def add_to_basket(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Button 'add to basket' is not presented"
